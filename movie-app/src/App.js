@@ -35,7 +35,7 @@ function App() {
     
   }
   return (
-    <div className="App">
+        <div className='App'>
          <Header/>
          <Routes>
           <Route path='/' element={<Home/>}/>
@@ -45,7 +45,7 @@ function App() {
           <Route path='*' element={<PageNotFound/>}/>
          </Routes>
          <Footer/>
-    </div>
+         </div>
   );
 }
 

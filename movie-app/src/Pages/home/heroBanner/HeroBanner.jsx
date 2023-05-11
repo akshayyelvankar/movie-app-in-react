@@ -35,6 +35,7 @@ const HeroBanner = () => {
         <div className='opacity-layer'></div>
       <ContentWrapper>
          <div className='heroBannerConent'>
+          
           <span className='title' style={{color:"#fff"}}>Welcome</span>
           <span className='subTitle'>Millions of movies,TV shows and People to discover,Explore now.</span>
           <div className='searchInput'>
