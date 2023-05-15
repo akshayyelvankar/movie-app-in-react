@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <div className='homePage'>
         <HeroBanner/>
-        
         <Trading/>
         <div style={{height:"100vh"}}></div>
     </div>
