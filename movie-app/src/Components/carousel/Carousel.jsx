@@ -11,11 +11,11 @@ import CircleRating from '../circleRating/CircleRating';
 import "./style.scss";
 
 
-const Carousel = ({data,loading}) => {
+const Carousel = ({data,loading,endpoint,}) => {
     
     const{url}=useSelector((state)=>state.home);
     const navigate=useNavigate();
-
+     
     // Scrolling logic
       const carouselContainer=useRef();
       const navigation=(dir)=>{
@@ -44,20 +44,22 @@ const Carousel = ({data,loading}) => {
     }
   return (
     <div className='carousel'>
+       
        <ContentWrapper>
         <BsFillArrowLeftCircleFill className='carouselLeftNav  arrow'onClick={()=>navigation("left")}/>
         <BsFillArrowRightCircleFill className='carouselRightNav arrow' onClick={()=>navigation("right")}/>  
           {
             !loading ? (
-                <div className='carouselItems'ref={carouselContainer}>
+                <div className='carouselItems'ref={carouselContainer} >
                    {
                     data?.map((item)=>{
 
                         const postUrl=item.poster_path ? url.poster + item.poster_path :PosterFallback;
                         return(
-                            <div key={item.id} className='carouselItem'>
+                            <div key={item.id} className='carouselItem' onClick={()=>navigate(`/${item.media_type || endpoint}/${item.id}`)}>
                                <div className='posterBlock'>
-                                <Img src={postUrl}/>
+                                <Img src={postUrl} />
+                               
                                  <CircleRating rating={item.vote_average.toFixed(1)}/>
                                </div>
                                <div className='textBlock'>
@@ -67,7 +69,7 @@ const Carousel = ({data,loading}) => {
                                         dayjs(item.release_Date).format("MMM D, YYYY")
                                     }
                                 </span>
-                               </div>
+                               </div>   
                             </div>
                         )
                     })
