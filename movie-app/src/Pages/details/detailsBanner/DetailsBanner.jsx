@@ -22,8 +22,8 @@ const DetailsBanner = ({ video, crew }) => {
     const { mediaType, id } = useParams();
     const { data, loading } = useFetch(`/${mediaType}/${id}`);
     const { url } = useSelector((state) => state.home)
-    const director = crew?.filter((f) => f.job === "Director");
-    const writer = crew?.filter((f) => f.job === "Screenplay" || f.job === "Story" || f.job === "Writer")
+    //const director = crew?.filter((f) => f.job === "Director");
+    //const writer = crew?.filter((f) => f.job === "Screenplay" || f.job === "Story" || f.job === "Writer")
 
     const toHoursAndMinutes = (totalMinutes) => {
         const hours = Math.floor(totalMinutes / 60);
@@ -66,7 +66,7 @@ const DetailsBanner = ({ video, crew }) => {
                                             </div>
                                             <div className="playbtn" onClick={() => {
                                                 setShow(true)
-                                                setVideoId(video.key)
+                                                setVideoId(video?.key)
                                             }}>
                                                 <PlayIcon />
                                                 <span className="text">Watch Trailer</span>

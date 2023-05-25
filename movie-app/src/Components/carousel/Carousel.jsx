@@ -30,7 +30,7 @@ const Carousel = ({data,loading,endpoint,title}) => {
         behavior:"smooth"
       })
     }
-
+    // Loading Skleton
     const skItem=()=>{
       return(
         <div className='skeletonItem'>

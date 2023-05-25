@@ -10,10 +10,11 @@ const HeroBanner = () => {
   const[query,setQuery]=useState("");
   const navigate=useNavigate();
   const {url} =useSelector((state)=>state.home)
+  
   // Fetching Data From APi
   const {data,loading}=useFetch("/movie/upcoming");
 
-  //Fetching Random Background image
+  // Set Random Background image
      useEffect(()=>{
         const bg=url.backdrop + data?.results?.[Math.floor(Math.random()*20)]?.backdrop_path;
          setBackground(bg);
