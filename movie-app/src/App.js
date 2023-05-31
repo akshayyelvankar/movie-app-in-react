@@ -8,6 +8,7 @@ import Footer from "./Components/footer/Footer";
 import Home from "./Pages/home/Home";
 import SearchResult from "./Pages/searchResult/SearchResult";
 import Details from "./Pages/details/Details";
+import PageNotFound from './Pages/pageNotFound/PageNotFound';
 
 function App() {
   
@@ -35,15 +36,18 @@ function App() {
     
   }
   return (
-        <div className='App'>
+        <>
          <Header/>
          <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/:mediaType/:id' element={<Details/>}/>
           <Route path='/search/:query' element={<SearchResult/>}/>
-         </Routes>
-         <Footer/>
-         </div>
+
+          {/* logic of multiple path use in single component */}
+          {['movie','tv'].map(path=><Route path={path} element={<PageNotFound path={path}/>}/>)}
+          </Routes>
+          <Footer/>
+        </>
   ); 
 }
 
