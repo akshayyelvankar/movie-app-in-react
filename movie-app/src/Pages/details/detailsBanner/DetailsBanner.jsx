@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs"
-
 import "./style.scss";
-
 import ContentWrapper from "../../../Components/contentWrapper/ContentWrapper"
 import useFetch from "../../../hooks/useFetch";
 import CircleRating from "../../../Components/circleRating/CircleRating"
@@ -39,7 +37,7 @@ const DetailsBanner = ({ video, crew }) => {
                         !!data && (
                             <React.Fragment>
                                 <div className="backdrop-img">
-                                    <img src={url.backdrop + data.backdrop_path} />
+                                    <img src={url.backdrop + data.backdrop_path} alt="background Img"/>
                                 </div>
                                 <div className="opacity-layer"></div>
                                 <ContentWrapper>
@@ -86,8 +84,7 @@ const DetailsBanner = ({ video, crew }) => {
                                                             </span>
                                                             <span className="text">{data.status}</span>
                                                         </div>
-                                                    )
-                                                }
+                                                    )}
                                                 {
                                                     data.release_date && (
                                                         <div className="infoItem">
@@ -96,8 +93,7 @@ const DetailsBanner = ({ video, crew }) => {
                                                             </span>
                                                             <span className="text">{dayjs(data.release_date).format("MMM   D,YYYY")}</span>
                                                         </div>
-                                                    )
-                                                }
+                                                    )}
                                                 {
                                                     data.runtime && (
                                                         <div className="infoItem">

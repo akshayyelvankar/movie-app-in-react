@@ -1,12 +1,13 @@
-
-.container{
-    color: white;
-    height: 70vh;
-    width: 100%;
+.pagenotfound_container{
+    .container{
+        color: white;
+        height: 70vh;
+        width: 100%;
+    }
+    .text{
+         display:flex;
+         justify-content: center;
+         align-items: center;
+         height: 65vh;
+      }
 }
-.text{
-     display:flex;
-     justify-content: center;
-     align-items: center;
-     height: 65vh;
-  }

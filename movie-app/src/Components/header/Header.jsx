@@ -66,16 +66,16 @@ const Header = () => {
    }
 
    // Navigate to pages
-   const navigationHandler=(type)=>{
-      if(type === "movie")
-      {
-        navigate("/explore/movie")
-      }
-      else{
-        navigate("/explore/tv")
-      }
-      setMobileMenu(false)
-   }
+  //  const navigationHandler=(type)=>{
+  //     if(type === "movie")
+  //     {
+  //       navigate("/explore/movie")
+  //     }
+  //     else{
+  //       navigate("/explore/tv")
+  //     }
+  //     setMobileMenu(false)
+  //  }
   return (
 
     <header className={`header ${mobileMenu ? "mobileView" :""} ${show}`}>
